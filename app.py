@@ -7,3 +7,4 @@ st.text('마지막 텍스트')
 
 st.sidebar.selectbox('메뉴', ['Home', 'Show', 'etc'])
 
+st.text('마지막 텍스트')
