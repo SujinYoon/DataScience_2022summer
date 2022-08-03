@@ -1,4 +1,4 @@
 tensorflow
 keras
-opencv2-python
+opencv-python
 numpy
