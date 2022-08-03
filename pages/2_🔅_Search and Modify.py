@@ -30,7 +30,7 @@ if 'search' not in st.session_state:
 
 col1, *col2 = st.columns(3)
 with col1:
-    s_uid = st.text_input('아이디')
+    s_uid = st.text_input('아이디').strip()
 col1, col2, *col3 = st.columns(5)
 with col1:
     s_btn = st.button('검색')
@@ -40,7 +40,7 @@ with col2:
 print('검색', s_btn)
 
 if s_btn:
-    if check_uid(s_uid) == 0:
+    if s_uid == '' or check_uid(s_uid) == 0:
         st.warning('해당 아이디는 존재하지 않습니다.')
         st.session_state['search'] = False
         st.stop()
@@ -49,14 +49,13 @@ if s_btn:
 
 if d_btn:
     st.session_state['search'] = False
-    if check_uid(s_uid) == 0:
+    if s_uid == '' or check_uid(s_uid) == 0:
         st.warning('해당 아이디는 존재하지 않습니다.')
         st.stop()
     cur.execute(
         f"DELETE FROM users WHERE uid='{s_uid}'")
     con.commit()
     st.success(f'삭제 완료: {s_uid}')
-
 
 try:
     if st.session_state['search']:
