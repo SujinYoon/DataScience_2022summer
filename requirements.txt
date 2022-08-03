@@ -2,3 +2,4 @@ opencv-python-headless
 tensorflow
 keras
 pillow
+streamlit_drawable_canvas
