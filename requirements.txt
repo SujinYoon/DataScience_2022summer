@@ -1,5 +1,4 @@
 tensorflow
 keras
-streamlit_drawable_canvas
 cv2-python
 numpy
